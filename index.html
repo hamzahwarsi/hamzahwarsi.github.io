@@ -2,523 +2,680 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohammad Hamzah Warsi — Electrical & Electronics Engineer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mohammad Hamzah Warsi | Electronics Engineer</title>
+<meta name="description" content="Electronics engineer working across hardware design, embedded firmware, test and automation. MEng, University of Nottingham.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='8' y='4' width='16' height='24' rx='2' fill='%2317614F'/><g fill='%23C39A2E'><rect x='3' y='8' width='5' height='3'/><rect x='3' y='14' width='5' height='3'/><rect x='3' y='20' width='5' height='3'/><rect x='24' y='8' width='5' height='3'/><rect x='24' y='14' width='5' height='3'/><rect x='24' y='20' width='5' height='3'/></g></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#10161b;
-    --bg-2:#0c1115;
-    --panel:#171f26;
-    --panel-2:#1d2730;
-    --border:#2a343d;
-    --text:#e7ecef;
-    --muted:#8695a1;
-    --muted-2:#5e6b76;
-    --amber:#ffb238;
-    --amber-dim:#8a642c;
-    --teal:#4fd8c4;
-    --teal-dim:#2c5c54;
-    --mono:'IBM Plex Mono', monospace;
-    --sans:'IBM Plex Sans', sans-serif;
-    --disp:'Space Grotesk', sans-serif;
+:root{
+  --paper:#F2F4F3;
+  --surface:#FFFFFF;
+  --ink:#13202B;
+  --muted:#53626C;
+  --line:#D3DADC;
+  --mask:#17614F;
+  --mask-soft:#E1EEE8;
+  --pad:#C39A2E;
+  --chip:#1D2A31;
+  --chip-ink:#DCE5E1;
+  --grid:rgba(23,97,79,.07);
+  --display:"Archivo", "Arial Narrow", Arial, sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", Roboto, Arial, sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1916; --surface:#16231F; --ink:#E5ECE8; --muted:#9BACA5; --line:#2A3A35;
+    --mask:#46B08F; --mask-soft:#1B342C; --pad:#D9B44E; --chip:#24343A; --chip-ink:#DCE5E1;
+    --grid:rgba(70,176,143,.07); color-scheme:dark;
   }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:
-      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(255,178,56,0.06), transparent),
-      radial-gradient(ellipse 900px 600px at 90% 10%, rgba(79,216,196,0.05), transparent),
-      var(--bg);
-    color:var(--text);
-    font-family:var(--sans);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .grid-overlay{
-    position:fixed; inset:0; pointer-events:none; z-index:0; opacity:0.35;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size:44px 44px;
-  }
-  a{color:inherit;}
-  .wrap{max-width:1040px; margin:0 auto; padding:0 28px; position:relative; z-index:1;}
-  ::selection{background:var(--amber); color:#10161b;}
+}
+:root[data-theme="dark"]{
+  --paper:#0F1916; --surface:#16231F; --ink:#E5ECE8; --muted:#9BACA5; --line:#2A3A35;
+  --mask:#46B08F; --mask-soft:#1B342C; --pad:#D9B44E; --chip:#24343A; --chip-ink:#DCE5E1;
+  --grid:rgba(70,176,143,.07); color-scheme:dark;
+}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:var(--mask);text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--pad);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0}
+h2{font-size:clamp(1.9rem,3.6vw,2.6rem);font-stretch:118%;font-weight:750;letter-spacing:-.01em}
+h3{font-size:1.25rem;font-stretch:105%;font-weight:700}
+p{margin:0 0 1em}
+.lede{color:var(--muted);max-width:62ch;margin-top:.6rem}
 
-  /* ---- eyebrow / labels ---- */
-  .eyebrow{
-    font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase;
-    color:var(--teal); display:flex; align-items:center; gap:10px; margin-bottom:14px;
-  }
-  .eyebrow::before{content:''; width:22px; height:1px; background:var(--teal); display:inline-block;}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px);margin-top:calc(-1 * env(safe-area-inset-top,0px))}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:60px}
+.brand{font-family:var(--display);font-stretch:80%;font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.brand svg{width:22px;height:22px}
+.nav ul{list-style:none;margin:0 0 0 auto;padding:0;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.nav ul::-webkit-scrollbar{display:none}
+.nav a.link{display:block;padding:6px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:.95rem;white-space:nowrap}
+.nav a.link:hover{color:var(--ink)}
+.nav a.link.active{background:var(--mask-soft);color:var(--mask);font-weight:700}
+.theme-btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);width:36px;height:36px;border-radius:50%;cursor:pointer;flex:none;display:grid;place-items:center}
+@media (max-width:720px){.brand span{display:none}.nav .wrap{gap:10px}}
 
-  /* ---- corner bracket motif (schematic reference marks) ---- */
-  .bracket{ position:relative; }
-  .bracket::before, .bracket::after{
-    content:''; position:absolute; width:14px; height:14px; border-color:var(--amber-dim); opacity:.9;
-  }
-  .bracket::before{ top:-1px; left:-1px; border-top:1px solid; border-left:1px solid; }
-  .bracket::after{ bottom:-1px; right:-1px; border-bottom:1px solid; border-right:1px solid; }
+/* hero */
+.hero{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;padding-top:64px;padding-bottom:56px;align-items:start}
+@media (max-width:920px){.hero .wrap{grid-template-columns:1fr;padding-top:40px;gap:32px}}
+.name{font-size:clamp(2.6rem,6.4vw,4.8rem);font-stretch:112%;font-weight:800;letter-spacing:-.025em;line-height:.98}
+.name .given{display:block;font-stretch:72%;font-weight:500;font-size:.42em;letter-spacing:0;color:var(--muted);margin-bottom:.35em}
+.role{font-family:var(--display);font-stretch:90%;font-size:1.3rem;font-weight:600;margin:22px 0 14px;color:var(--mask)}
+.intro{max-width:56ch}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:8px;font-weight:700;text-decoration:none;font-size:.98rem;border:1.5px solid var(--ink);color:var(--ink);background:var(--surface)}
+.btn.primary{background:var(--mask);border-color:var(--mask);color:#fff}
+:root[data-theme="dark"] .btn.primary{color:#0F1916}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{color:#0F1916}}
+.btn:hover{transform:translateY(-1px)}
+.btn svg{width:18px;height:18px}
+.loc{margin-top:18px;color:var(--muted);font-size:.95rem}
 
-  /* ---- nav ---- */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(16,22,27,0.86); backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--border);
-  }
-  nav.wrap{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; }
-  .brand{ font-family:var(--mono); font-size:13px; letter-spacing:.06em; color:var(--muted); display:flex; gap:8px; align-items:center; }
-  .brand b{ color:var(--text); font-weight:600; }
-  .dot{ width:7px; height:7px; border-radius:50%; background:var(--amber); box-shadow:0 0 8px var(--amber); }
-  .navlinks{ display:flex; gap:26px; font-family:var(--mono); font-size:12.5px; letter-spacing:.05em; }
-  .navlinks a{ color:var(--muted); text-decoration:none; transition:color .15s; text-transform:uppercase;}
-  .navlinks a:hover{ color:var(--amber); }
-  @media (max-width:720px){ .navlinks{ display:none; } }
+/* pinout */
+.pinout{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 18px 20px}
+.pinout-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:4px}
+.pinout-head h2{font-size:1.15rem;font-stretch:100%}
+.pinout-head p{margin:0;color:var(--muted);font-size:.88rem}
+#chip{display:block;width:100%;height:auto;touch-action:manipulation}
+#chip .trace{fill:none;stroke:var(--line);stroke-width:3;stroke-linecap:round;stroke-dasharray:140;stroke-dashoffset:140;animation:draw .9s cubic-bezier(.6,0,.2,1) forwards;animation-delay:calc(var(--d) * 90ms + 150ms)}
+#chip .via{fill:var(--surface);stroke:var(--pad);stroke-width:3;opacity:0;animation:pop .3s ease forwards;animation-delay:calc(var(--d) * 90ms + 900ms)}
+#chip .leg{fill:var(--pad)}
+#chip .lbl{font-family:var(--display);font-stretch:85%;font-size:17px;font-weight:600;fill:var(--muted)}
+#chip .pn{font-family:var(--display);font-stretch:80%;font-size:12px;fill:var(--chip-ink);opacity:.75}
+#chip .pin{cursor:pointer;outline:none}
+#chip .pin .hit{fill:transparent}
+#chip .pin:hover .lbl,#chip .pin.on .lbl{fill:var(--ink)}
+#chip .pin.on .trace{stroke:var(--mask)}
+#chip .pin.on .via{fill:var(--mask);stroke:var(--mask)}
+#chip .pin:focus-visible .hit{stroke:var(--pad);stroke-width:2;stroke-dasharray:4 3}
+#chip .sig{fill:var(--pad)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:1}}
+.pin-panel{border-top:1px dashed var(--line);margin-top:10px;padding-top:14px;min-height:170px}
+.pin-panel .meta{font-family:var(--display);font-stretch:80%;color:var(--mask);font-weight:700;font-size:.92rem}
+.pin-panel h3{margin:2px 0 6px}
+.pin-panel p{color:var(--muted);font-size:.96rem;margin-bottom:10px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0}
+.tags li{font-size:.86rem;padding:3px 10px;border:1px solid var(--line);border-radius:6px;background:var(--paper)}
 
-  /* ---- hero ---- */
-  .hero{ padding:96px 0 64px; position:relative; }
-  .hero h1{
-    font-family:var(--disp); font-weight:700; font-size:clamp(34px,5.4vw,58px);
-    line-height:1.05; letter-spacing:-0.01em; max-width:780px;
-  }
-  .hero h1 .hl{ color:var(--amber); }
-  .hero p.role{
-    font-family:var(--mono); font-size:14px; color:var(--teal); margin-top:18px; letter-spacing:.03em;
-  }
-  .hero p.desc{
-    margin-top:20px; max-width:620px; color:var(--muted); font-size:15.5px;
-  }
-  .hero-links{ display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; }
-  .btn{
-    font-family:var(--mono); font-size:12.5px; letter-spacing:.04em; text-transform:uppercase;
-    padding:11px 18px; border:1px solid var(--border); text-decoration:none; color:var(--text);
-    transition:all .15s; display:inline-flex; align-items:center; gap:8px;
-  }
-  .btn.primary{ background:var(--amber); color:#14100a; border-color:var(--amber); font-weight:600;}
-  .btn.primary:hover{ background:#ffc45c; }
-  .btn:not(.primary):hover{ border-color:var(--teal); color:var(--teal); }
+/* features */
+.features{list-style:none;margin:0;padding:28px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;grid-column:1/-1;border-top:1px solid var(--line)}
+.features li{position:relative;padding-left:22px;font-size:.98rem}
+.features li::before{content:"";position:absolute;left:0;top:.42em;width:10px;height:10px;border-radius:2px;background:var(--pad)}
+.features b{font-family:var(--display);font-stretch:95%}
+@media (max-width:920px){.features{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.features{grid-template-columns:1fr}}
 
-  /* ---- readout stat strip (multimeter panel) ---- */
-  .readout{
-    margin-top:56px; border:1px solid var(--border); background:var(--panel);
-    display:grid; grid-template-columns:repeat(4,1fr);
-  }
-  .readout .cell{
-    padding:20px 18px; border-right:1px solid var(--border);
-  }
-  .readout .cell:last-child{ border-right:none; }
-  .readout .cell .val{
-    font-family:var(--mono); font-size:clamp(20px,2.6vw,26px); color:var(--amber); font-weight:600;
-  }
-  .readout .cell .lbl{
-    font-family:var(--mono); font-size:10.5px; color:var(--muted-2); text-transform:uppercase; letter-spacing:.08em; margin-top:6px;
-  }
-  @media (max-width:720px){ .readout{ grid-template-columns:repeat(2,1fr); } .readout .cell:nth-child(2){border-right:none;} }
+section.block{padding:84px 0 20px}
+.block-head{margin-bottom:36px}
 
-  /* ---- section base ---- */
-  section{ padding:88px 0; border-top:1px solid var(--border); }
-  .section-head{ display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:48px; flex-wrap:wrap; gap:16px;}
-  .section-head h2{ font-family:var(--disp); font-size:clamp(24px,3.4vw,34px); font-weight:600; }
-  .section-head .idx{ font-family:var(--mono); color:var(--muted-2); font-size:13px; }
+/* experience timeline */
+.timeline{position:relative;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:3px;background:var(--line);border-radius:3px}
+.job{position:relative;margin-bottom:56px}
+.job::before{content:"";position:absolute;left:-32px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--surface);border:3px solid var(--pad)}
+.job-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 20px;align-items:baseline}
+.job h3{font-size:1.45rem}
+.when{font-family:var(--display);font-stretch:82%;font-weight:600;color:var(--muted);font-size:1rem}
+.where{color:var(--mask);font-weight:700;margin:4px 0 10px}
+.job ul{margin:0;padding-left:1.1em}
+.job li{margin-bottom:.45em;max-width:75ch}
+.job li::marker{color:var(--pad)}
 
-  /* ---- experience: trace-routed timeline ---- */
-  .timeline{ position:relative; padding-left:34px; }
-  .timeline::before{
-    content:''; position:absolute; left:6px; top:6px; bottom:6px; width:1px;
-    background:linear-gradient(var(--teal-dim), var(--border) 90%);
-  }
-  .tl-item{ position:relative; padding-bottom:56px; }
-  .tl-item:last-child{ padding-bottom:0; }
-  .tl-node{
-    position:absolute; left:-34px; top:4px; width:13px; height:13px; border:1px solid var(--teal);
-    background:var(--bg); transform:rotate(45deg);
-  }
-  .tl-node::after{ content:''; position:absolute; inset:3px; background:var(--teal); }
-  .tl-item .role-row{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; }
-  .tl-item h3{ font-family:var(--disp); font-size:19px; font-weight:600; }
-  .tl-item .org{ color:var(--amber); font-family:var(--mono); font-size:12.5px; margin-top:4px; }
-  .tl-item .period{ font-family:var(--mono); font-size:12px; color:var(--muted-2); white-space:nowrap; }
-  .tl-item ul{ margin-top:14px; padding-left:18px; color:var(--muted); font-size:14.5px; }
-  .tl-item li{ margin-bottom:7px; }
-  .tl-item li::marker{ color:var(--teal); }
-  .subgroup{ margin-top:18px; border-left:2px solid var(--border); padding-left:16px; }
-  .subgroup .sg-title{ font-family:var(--mono); font-size:12px; color:var(--teal); text-transform:uppercase; letter-spacing:.05em; margin-bottom:8px;}
+.work{display:grid;grid-template-columns:250px 1fr;gap:0;margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.work [role=tablist]{display:flex;flex-direction:column;border-right:1px solid var(--line);padding:8px;background:var(--paper)}
+.work [role=tab]{all:unset;cursor:pointer;padding:10px 12px;border-radius:8px;font-size:.95rem;line-height:1.3;color:var(--muted);display:flex;gap:10px;align-items:center}
+.work [role=tab]::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;border:2px solid var(--line)}
+.work [role=tab]:hover{color:var(--ink)}
+.work [role=tab][aria-selected=true]{background:var(--surface);color:var(--ink);font-weight:700;box-shadow:inset 3px 0 0 var(--mask)}
+.work [role=tab][aria-selected=true]::before{background:var(--mask);border-color:var(--mask)}
+.work [role=tab]:focus-visible{outline:3px solid var(--pad);outline-offset:-3px}
+.work [role=tab].star::after{content:"Highlight";margin-left:auto;font-size:.72rem;font-weight:700;color:var(--pad);border:1px solid var(--pad);border-radius:4px;padding:0 5px}
+.work [role=tabpanel]{padding:26px 28px}
+.work [role=tabpanel] h4{font-family:var(--display);font-stretch:105%;font-size:1.2rem;margin:0 0 4px}
+.work [role=tabpanel] .sub{color:var(--muted);margin-bottom:14px;font-size:.96rem}
+@media (max-width:820px){
+  .work{grid-template-columns:1fr}
+  .work [role=tablist]{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);scrollbar-width:thin}
+  .work [role=tab]{white-space:nowrap}
+  .work [role=tab][aria-selected=true]{box-shadow:inset 0 -3px 0 var(--mask)}
+  .work [role=tabpanel]{padding:20px}
+}
 
-  /* ---- project cards (datasheet style) ---- */
-  .proj-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
-  @media (max-width:720px){ .proj-grid{ grid-template-columns:1fr; } }
-  .card{
-    border:1px solid var(--border); background:var(--panel); padding:24px 22px; position:relative;
-  }
-  .card .tag{
-    font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted-2);
-    border:1px solid var(--border); padding:3px 8px; display:inline-block; margin-bottom:14px;
-  }
-  .card h3{ font-family:var(--disp); font-size:18px; font-weight:600; margin-bottom:10px; }
-  .card p{ color:var(--muted); font-size:14px; }
-  .card .metrics{ display:flex; gap:16px; margin-top:16px; flex-wrap:wrap; }
-  .card .metrics span{ font-family:var(--mono); font-size:11.5px; color:var(--teal); }
-  .card.wide{ grid-column:1 / -1; }
+/* projects */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.filters button{font:inherit;font-size:.93rem;padding:7px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.filters button[aria-pressed=true]{border-color:var(--mask);background:var(--mask-soft);color:var(--mask);font-weight:700}
+.proj-list{border-top:2px solid var(--ink)}
+.proj{border-bottom:1px solid var(--line)}
+.proj[hidden]{display:none}
+.proj summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto 28px;gap:20px;align-items:center;padding:20px 4px}
+.proj summary::-webkit-details-marker{display:none}
+.proj summary:hover h3{color:var(--mask)}
+.proj .one{color:var(--muted);font-size:.95rem;margin-top:4px}
+.proj .fig{text-align:right;font-family:var(--display)}
+.proj .fig strong{display:block;font-size:1.7rem;font-stretch:110%;font-weight:750;line-height:1}
+.proj .fig small{color:var(--muted);font-stretch:85%;font-size:.85rem}
+.chev{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:transform .25s}
+.proj[open] .chev{transform:rotate(45deg);border-color:var(--mask);color:var(--mask)}
+.proj-body{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;padding:0 4px 28px}
+.proj-body p{max-width:65ch}
+.spec{width:100%;border-collapse:collapse;font-size:.94rem}
+.spec caption{text-align:left;font-family:var(--display);font-stretch:85%;font-weight:700;color:var(--muted);padding-bottom:6px}
+.spec th,.spec td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line)}
+.spec th{font-weight:400;color:var(--muted)}
+.spec td{font-weight:700;text-align:right}
+.spec tr:first-child th,.spec tr:first-child td{border-top:1px solid var(--line)}
+.ptags{margin-top:10px}
+@media (max-width:720px){
+  .proj summary{grid-template-columns:1fr 28px}
+  .proj .fig{grid-column:1;grid-row:2;text-align:left;display:flex;gap:8px;align-items:baseline}
+  .proj .fig strong{display:inline;font-size:1.3rem}
+  .proj .chev{grid-row:1/3;grid-column:2}
+  .proj-body{grid-template-columns:1fr;gap:18px}
+}
 
-  /* ---- publications ---- */
-  .pub{
-    border:1px solid var(--border); background:var(--panel); padding:22px 24px; margin-bottom:14px;
-    display:grid; grid-template-columns:110px 1fr; gap:20px;
-  }
-  @media (max-width:640px){ .pub{ grid-template-columns:1fr; gap:8px; } }
-  .pub .status{ font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--amber); align-self:start; }
-  .pub .status.pending{ color:var(--muted-2); }
-  .pub h3{ font-family:var(--disp); font-size:16.5px; font-weight:600; margin-bottom:6px; }
-  .pub .meta{ font-family:var(--mono); font-size:11.5px; color:var(--muted-2); margin-bottom:10px; }
-  .pub p{ color:var(--muted); font-size:13.5px; }
+/* publications */
+.pubs{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.pub{display:grid;grid-template-columns:90px 1fr auto;gap:20px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.pub .yr{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:1.3rem;color:var(--mask)}
+.pub h3{font-size:1.1rem;font-stretch:100%;line-height:1.3;margin-bottom:6px}
+.pub .venue{color:var(--muted);font-size:.94rem;margin:0 0 6px}
+.pub .note{font-size:.95rem;margin:0;max-width:70ch}
+.status{font-size:.8rem;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.status.pubd{background:var(--mask-soft);color:var(--mask)}
+.status.rev{border:1px dashed var(--muted);color:var(--muted)}
+.doi{display:inline-block;margin-top:8px;font-weight:700;font-size:.93rem}
+@media (max-width:720px){.pub{grid-template-columns:1fr;gap:6px}.pub .status{justify-self:start}}
 
-  /* ---- skills as component tags ---- */
-  .skill-groups{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
-  @media (max-width:780px){ .skill-groups{ grid-template-columns:1fr; } }
-  .skill-groups h4{ font-family:var(--mono); font-size:11.5px; color:var(--teal); text-transform:uppercase; letter-spacing:.07em; margin-bottom:14px;}
-  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
-  .chip{
-    font-family:var(--mono); font-size:12px; color:var(--text); border:1px solid var(--border);
-    padding:6px 10px; background:var(--panel);
-  }
+/* background */
+.bg-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:40px}
+.bg-grid h3{font-size:1.05rem;padding-bottom:10px;margin-bottom:14px;border-bottom:2px solid var(--ink)}
+.edu{margin-bottom:18px}
+.edu b{display:block;font-family:var(--display);font-stretch:100%;font-size:1.08rem}
+.edu span{color:var(--muted);font-size:.95rem}
+.certs{list-style:none;margin:0;padding:0}
+.certs li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:.94rem}
+.certs li span:last-child{color:var(--muted);white-space:nowrap;font-size:.88rem}
+.langs{list-style:none;margin:0 0 26px;padding:0}
+.langs li{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line);font-size:.96rem}
+.langs li span:last-child{color:var(--muted)}
+@media (max-width:920px){.bg-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.bg-grid{grid-template-columns:1fr}}
 
-  /* ---- certifications / education ---- */
-  .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:44px; }
-  @media (max-width:780px){ .two-col{ grid-template-columns:1fr; gap:40px; } }
-  .cert-list li, .lang-list li{ list-style:none; display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border); font-size:13.5px; }
-  .cert-list li span, .lang-list li span{ font-family:var(--mono); font-size:11.5px; color:var(--muted-2); }
-  .edu-block{ margin-bottom:22px; }
-  .edu-block h3{ font-family:var(--disp); font-size:17px; margin-bottom:4px; }
-  .edu-block .meta{ font-family:var(--mono); font-size:12px; color:var(--muted-2); }
+/* contact */
+.contact{margin-top:90px;background:var(--chip);color:var(--chip-ink);padding:72px 0 calc(48px + env(safe-area-inset-bottom,0px))}
+.contact h2{color:#fff;font-size:clamp(2rem,5vw,3.4rem)}
+.contact .lede{color:#AFC0B9}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
+.contact-grid a{display:block;padding:20px;border:1px solid rgba(255,255,255,.16);border-radius:12px;color:#fff;text-decoration:none}
+.contact-grid a:hover{border-color:var(--pad)}
+.contact-grid small{display:block;color:#AFC0B9;font-size:.85rem;margin-bottom:4px}
+.contact-grid strong{font-family:var(--display);font-stretch:95%;font-size:1.08rem;word-break:break-word}
+.foot{margin-top:56px;color:#8FA39B;font-size:.88rem}
+@media (max-width:720px){.contact-grid{grid-template-columns:1fr}}
 
-  /* ---- footer / contact ---- */
-  footer{ padding:80px 0 60px; border-top:1px solid var(--border); }
-  footer h2{ font-family:var(--disp); font-size:clamp(26px,4vw,40px); font-weight:600; max-width:600px; }
-  footer .status-line{
-    font-family:var(--mono); font-size:12.5px; color:var(--teal); margin-top:16px; display:flex; align-items:center; gap:8px;
-  }
-  .pulse{ width:7px; height:7px; border-radius:50%; background:var(--teal); box-shadow:0 0 8px var(--teal); animation:pulse 1.8s infinite; }
-  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:.3;} }
-  .contact-row{ display:flex; gap:14px; margin-top:34px; flex-wrap:wrap; }
-  .foot-bottom{ margin-top:64px; padding-top:24px; border-top:1px solid var(--border); font-family:var(--mono); font-size:11px; color:var(--muted-2); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
-
-  .reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
-  .reveal.in{ opacity:1; transform:none; }
-
-  @media (prefers-reduced-motion: reduce){
-    .reveal{ opacity:1; transform:none; transition:none; }
-    .pulse{ animation:none; }
-    html{ scroll-behavior:auto; }
-  }
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  #chip .trace{animation:none;stroke-dashoffset:0}
+  #chip .via{animation:none;opacity:1}
+  .chev,.btn{transition:none}
+  .btn:hover{transform:none}
+}
 </style>
 </head>
 <body>
-<div class="grid-overlay"></div>
 
-<header>
-  <nav class="wrap">
-    <div class="brand"><span class="dot"></span><b>M.H. WARSI</b> / EE-PORTFOLIO</div>
-    <div class="navlinks">
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#publications">Publications</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Back to top">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="8" y="4" width="16" height="24" rx="2" fill="var(--mask)"/><g fill="var(--pad)"><rect x="3" y="8" width="5" height="3"/><rect x="3" y="14" width="5" height="3"/><rect x="3" y="20" width="5" height="3"/><rect x="24" y="8" width="5" height="3"/><rect x="24" y="14" width="5" height="3"/><rect x="24" y="20" width="5" height="3"/></g></svg>
+      <span>Hamzah Warsi</span>
+    </a>
+    <ul>
+      <li><a class="link" href="#skills">Skills</a></li>
+      <li><a class="link" href="#experience">Experience</a></li>
+      <li><a class="link" href="#projects">Projects</a></li>
+      <li><a class="link" href="#research">Research</a></li>
+      <li><a class="link" href="#background">Background</a></li>
+      <li><a class="link" href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch colour theme">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1 class="name"><span class="given">Mohammad</span>Hamzah Warsi</h1>
+      <p class="role">Electronics engineer: hardware design, embedded firmware, test and automation</p>
+      <p class="intro">MEng in Electrical and Electronic Engineering from the University of Nottingham, with hands-on work in Belgium, Germany, Malaysia and Norway. Most recently I wrote C firmware for TI AM64x Arm processors, modified PCB designs and validated high-power battery cell test towers for BMW, Fraunhofer and Varta.</p>
+      <p class="intro">I like the problems that sit between disciplines: a compressor overheating because a valve was fitted in reverse, or a safety issue traced back to the wrong choice of wire.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:hamzahw.work@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/hamzahwarsi/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.95 1.32-1.95 2.7V21h-4z"/></svg>LinkedIn</a>
+        <a class="btn" href="Hamzah_Warsi_CV.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Download CV</a>
+      </div>
+      <p class="loc">Based in the UAE</p>
     </div>
-  </nav>
+
+    <div class="pinout" id="skills">
+      <div class="pinout-head">
+        <h2>Pin configuration</h2>
+        <p>Select a pin to see the skills behind it</p>
+      </div>
+      <svg id="chip" viewBox="0 0 520 420" role="group" aria-label="Skills shown as pins on a chip"></svg>
+      <div class="pin-panel" id="pinPanel" aria-live="polite"></div>
+    </div>
+
+    <ul class="features" aria-label="Highlights">
+      <li>Completed final testing of tower RD01 on-site at <b>BMW Wackersdorf</b>, contributing to a €100M customer handover</li>
+      <li>Cut downtime by <b>30%</b> in three months on a live Sony TV production line</li>
+      <li>First author of <b>four papers</b>, two published with Springer Nature and IEEE</li>
+      <li>Edge AI model running in <b>10 ms</b> on a Coral Edge TPU, against 40 ms on a GPU workstation</li>
+    </ul>
+  </div>
 </header>
 
-<main class="wrap">
-
-  <!-- HERO -->
-  <section class="hero" style="border-top:none;">
-    <div class="eyebrow">EE / FIRMWARE / INDUSTRIAL AUTOMATION / RENEWABLES</div>
-    <h1>Mohammad Hamzah Warsi — building the <span class="hl">low-level systems</span> that keep high-stakes hardware honest.</h1>
-    <p class="role">Electrical & Electronics Engineer · Firmware · Battery Test Infrastructure · Automation</p>
-    <p class="desc">MEng in Electrical & Electronics Engineering (Nottingham). Direct engineering experience across BMW, Sony, Fraunhofer, Varta and PEC NV — shipping bare-metal and Linux firmware, industrial robotics, and validated test infrastructure in environments where a wiring fault means a safety incident, not a bug ticket.</p>
-    <div class="hero-links">
-      <a class="btn primary" href="mailto:hamzahw.work@gmail.com">Email me →</a>
-      <a class="btn" href="tel:+918953417389">+91 8953417389</a>
-      <a class="btn" href="https://www.linkedin.com/in/hamzahwarsi/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://www.kaggle.com/mohamzah/code" target="_blank" rel="noopener">Kaggle</a>
-      <a class="btn" href="#experience">View experience</a>
-    </div>
-
-    <div class="readout reveal">
-      <div class="cell"><div class="val">€100M</div><div class="lbl">BMW customer handover</div></div>
-      <div class="cell"><div class="val">30%</div><div class="lbl">downtime reduction, Sony</div></div>
-      <div class="cell"><div class="val">84,000 Ah</div><div class="lbl">cell pallet prototype, 20 cells</div></div>
-      <div class="cell"><div class="val">2</div><div class="lbl">peer-reviewed publications</div></div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="section-head">
-      <h2 class="reveal">Experience</h2>
-      <div class="idx">01 / TIMELINE</div>
-    </div>
-
-    <div class="timeline">
-
-      <div class="tl-item reveal">
-        <div class="tl-node"></div>
-        <div class="role-row">
-          <div>
-            <h3>Electronics Engineer — Firmware & Testing</h3>
-            <div class="org">PEC NV, Belgium</div>
-          </div>
-          <div class="period">Feb 2025 – Dec 2025</div>
-        </div>
-        <ul>
-          <li>Developed bare-metal and Linux-based firmware for Integrated Cell Testers (TI MCUs, C) for BMW and Fraunhofer — new docking-controller functions and optimized low-level control logic to reduce test-cycle variability.</li>
-          <li>Integrated pressure transducers (±1% accuracy), vacuum systems, safety systems and HMI monitoring for real-time cell control; built 3-way valve and fan control logic for thermal regulation.</li>
-          <li>Diagnosed and corrected an overheating safety issue (incorrect wiring) on Varta testers; delivered a probe comparison study for Fraunhofer.</li>
-        </ul>
-
-        <div class="subgroup">
-          <div class="sg-title">BMW Project — Wackersdorf, Germany</div>
-          <ul>
-            <li>Prototyped a new cell pallet for 20 cells at an 84,000 Ah charging rate (4.2V max) for BMW's "Neue Klasse" vehicles; refined testing parameters to improve safety margins without compromising throughput.</li>
-            <li>Delivered a 1-week rapid intervention resolving wiring faults, overheat risk, sensor placement and a condensation root cause; completed tower RD01 validation, contributing to the €100M customer handover.</li>
-          </ul>
-        </div>
-
-        <div class="subgroup">
-          <div class="sg-title">Integrated Cell Tester Towers — Firmware Detail</div>
-          <ul>
-            <li>AI8 modules: firmware calibration update (Keil uVision), refined lookup tables and gain offsets, validated with documented before/after accuracy.</li>
-            <li>Safety systems: reformatted alarms for service engineers; added bimetal-flicker and GTS air-pump failure detection; built a DO/DI cross-validation health check and evaporator post-run cooling logic.</li>
-            <li>THC cards: calibrated and validated 40 thermal control cards; found and fixed register misconfiguration and offset errors; automated calibration scripts and reduced manual steps.</li>
-            <li>Pressure transmitters: real-time monitoring across –1 to 12 bar, ±1% accuracy, live HMI integration with overpressure alerts.</li>
-            <li>Type C pallet: contributed to the next-generation pallet deployed at BMW, reducing contact-resistance variability and authoring best-practice test documentation.</li>
-          </ul>
-        </div>
+<main>
+  <section class="block" id="experience">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>Experience</h2>
+        <p class="lede">Firmware, hardware and on-site troubleshooting for battery cell test systems, robot cells on a production line, and forecasting models for energy planning.</p>
       </div>
 
-      <div class="tl-item reveal">
-        <div class="tl-node"></div>
-        <div class="role-row">
-          <div>
+      <div class="timeline">
+        <article class="job">
+          <div class="job-top">
+            <h3>Electronics Engineer, Firmware &amp; Testing</h3>
+            <span class="when">Feb 2025 to Dec 2025</span>
+          </div>
+          <p class="where">PEC NV, Belgium</p>
+          <p>Integrated cell tester towers for BMW, Fraunhofer and Varta, covering firmware, safety, calibration, instrumentation and customer support.</p>
+          <div class="work" id="pecWork">
+            <div role="tablist" aria-label="PEC NV workstreams" id="pecTabs"></div>
+            <div id="pecPanels"></div>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job-top">
             <h3>Automation Engineer Intern</h3>
-            <div class="org">Sony EMCS, Malaysia</div>
+            <span class="when">Jun 2022 to Sep 2022</span>
           </div>
-          <div class="period">Jun 2022 – Sep 2022</div>
-        </div>
-        <ul>
-          <li>Deployed and optimized Fanuc and Mitsubishi robots on a live TV production line, achieving a 30% reduction in downtime within 3 months.</li>
-          <li>Led control panel and power system troubleshooting to keep production uninterrupted.</li>
-          <li>Designed an Excel-based error dashboard enabling faster root-cause analysis.</li>
-        </ul>
-      </div>
+          <p class="where">Sony EMCS, Malaysia</p>
+          <ul>
+            <li>Cut production downtime by 30% within 3 months by deploying and fine-tuning Fanuc and Mitsubishi robots on a live TV production line.</li>
+            <li>Kept production running by leading control panel and power system troubleshooting, and supported electrical cabinet and control panel work for the robot cells.</li>
+            <li>Sped up root-cause analysis by designing an Excel dashboard that tracked every robot fault and stoppage.</li>
+          </ul>
+        </article>
 
-      <div class="tl-item reveal">
-        <div class="tl-node"></div>
-        <div class="role-row">
-          <div>
+        <article class="job">
+          <div class="job-top">
             <h3>Machine Learning Engineer</h3>
-            <div class="org">Think Outside, Norway</div>
+            <span class="when">Feb 2022 to May 2022</span>
           </div>
-          <div class="period">Feb 2022 – May 2022</div>
-        </div>
-        <ul>
-          <li>Built time-series forecasting models for electricity prices and water availability, supporting 5-year energy planning for hydropower and wind integration.</li>
-          <li>Owned the end-to-end data pipeline — cleaning, preprocessing, feature selection, model tuning — improving forecast accuracy.</li>
-          <li>Established reproducible ML workflows with data versioning and experiment tracking.</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section-head">
-      <h2 class="reveal">Featured Projects</h2>
-      <div class="idx">02 / APPLIED WORK</div>
-    </div>
-
-    <div class="proj-grid">
-
-      <div class="card wide reveal">
-        <span class="tag">Power · Embedded · Simulation</span>
-        <h3>Energy Harnessing System for Smart Highways</h3>
-        <p>Multi-source renewable energy system for Malaysian highways, harvesting wasted vehicle energy to power street utilities. Piezoelectric transducers with a full-wave bridge rectifier converted pulsed mechanical input (~65V) to a regulated 12V output, while a closed-loop DC-DC boost converter stabilized a wind turbine's fluctuating 10–20V output to a constant 24V with under 2mV ripple. Wind turbine simulations (Ansys Fluent) projected up to 350W at highway speeds from a NACA 4412 horizontal-axis design. All sub-systems — piezoelectric, thermoelectric, wind — were integrated onto a single PCB and validated in LTspice, Simulink, and partial physical prototyping.</p>
-        <div class="metrics"><span>350W projected output</span><span>&lt;2mV ripple</span><span>LTspice / Simulink / Ansys Fluent</span></div>
-      </div>
-
-      <div class="card reveal">
-        <span class="tag">Power Electronics</span>
-        <h3>Switch-Mode Power Supply</h3>
-        <p>12V/2A buck converter using a TL494 PWM controller and MOSFET switching at 100kHz, with a custom 4-layer PCB routed in KiCAD. Reduced gate-drive parasitic inductance and added a freewheeling diode after oscilloscope-based waveform troubleshooting.</p>
-        <div class="metrics"><span>~85% efficiency</span><span>150mV ripple</span><span>KiCAD</span></div>
-      </div>
-
-      <div class="card reveal">
-        <span class="tag">Embedded · ML</span>
-        <h3>Edge Coffee Leaf Disease Classification</h3>
-        <p>Trained five deep learning models (MobileNetV2, VGG-16/19, DenseNet121, PentaCNN) on the JmuBen dataset, then deployed and benchmarked the best performer across GPU, TPU and VPU using a Google Coral Developer Board Mini for real-time, on-device inference.</p>
-        <div class="metrics"><span>98.9% training accuracy</span><span>10ms vs 40ms inference</span></div>
-      </div>
-
-      <div class="card reveal">
-        <span class="tag">Signal Processing · STM32</span>
-        <h3>Doppler Radar Speed Gun</h3>
-        <p>Continuous-wave Doppler radar speed gun using an HB100 microwave sensor (10.525GHz) and an STM32. Designed an op-amp band-pass signal-conditioning stage and a zero-crossing algorithm to convert Doppler shift to velocity, calibrated against a known moving target.</p>
-        <div class="metrics"><span>±5% error vs commercial gun</span></div>
-      </div>
-
-      <div class="card reveal">
-        <span class="tag">Robotics · Controls</span>
-        <h3>Hercules 4WD Line-Following Robot</h3>
-        <p>Autonomous 4WD robot on an Arduino Mega with a PID control loop over an 8-sensor IR array, driving four DC geared motors through an L298N driver. Self-etched PCBs for the sensor array and a 3D-printed AutoCAD sensor mount.</p>
-        <div class="metrics"><span>PID control</span><span>Custom PCB + mount</span></div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PUBLICATIONS -->
-  <section id="publications">
-    <div class="section-head">
-      <h2 class="reveal">Publications</h2>
-      <div class="idx">03 / RESEARCH</div>
-    </div>
-
-    <div class="pub reveal">
-      <div class="status">Published</div>
-      <div>
-        <h3>Advances in Energy Harnessing Techniques for Smart Highways: A Review</h3>
-        <div class="meta">Springer Nature: Electrical Engineering · DOI 10.1007/S00202-024-02379-8 · Apr 2024</div>
-        <p>Consolidates research on highway energy-harvesting technologies — piezoelectric, thermoelectric, pyroelectric, electromagnetic, solar — with a comparative assessment of principles, trade-offs and challenges for researchers, engineers and policymakers.</p>
-      </div>
-    </div>
-
-    <div class="pub reveal">
-      <div class="status">Published</div>
-      <div>
-        <h3>Real-Time Disease Classification in Coffee Plants with Coral Developer Board Mini</h3>
-        <div class="meta">IEEE AGRETA 2024 · DOI 10.1109/AGRETA61912.2024.10948998 · Jul 2024</div>
-        <p>Automated coffee-leaf disease classification on a Coral Developer Board Mini with Edge TPU; MobileNetV2 reached 98.9% training accuracy, with the Coral board outperforming a GPU workstation on inference latency.</p>
-      </div>
-    </div>
-
-    <div class="pub reveal">
-      <div class="status pending">In review</div>
-      <div>
-        <h3>Detecting Coffee Leaf Diseases with the Google Coral Developer Board Mini</h3>
-        <div class="meta">Computers and Electronics in Agriculture · status: first correction</div>
-      </div>
-    </div>
-
-    <div class="pub reveal">
-      <div class="status pending">In review</div>
-      <div>
-        <h3>Wired Highways: Energy Production for Roads</h3>
-        <div class="meta">Open Access Journal of Power and Energy (OAJPE) · status: submitted after first correction</div>
+          <p class="where">Think Outside, Norway</p>
+          <ul>
+            <li>Enabled 5-year energy planning for hydropower and wind integration by developing time-series forecasting models for electricity prices and water availability in Python, using scikit-learn, pandas and NumPy.</li>
+            <li>Improved forecast accuracy by owning the end-to-end data pipeline: data cleaning, preprocessing, feature selection and model tuning.</li>
+            <li>Made results reproducible and comparable by establishing machine learning workflows with data versioning and experiment tracking.</li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="section-head">
-      <h2 class="reveal">Skills & Tools</h2>
-      <div class="idx">04 / STACK</div>
+  <section class="block" id="projects">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>Engineering projects</h2>
+        <p class="lede">Built, measured and documented. Open a project to see its characteristics.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter projects" id="filters"></div>
+      <div class="proj-list" id="projList"></div>
     </div>
-    <div class="skill-groups">
-      <div class="reveal">
-        <h4>Embedded & Firmware</h4>
-        <div class="chips">
-          <span class="chip">TI MCU</span><span class="chip">Bare-metal C</span><span class="chip">Linux firmware</span>
-          <span class="chip">STM32</span><span class="chip">Arduino</span><span class="chip">Keil uVision</span>
-        </div>
+  </section>
+
+  <section class="block" id="research">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>Research</h2>
+        <p class="lede">First author on all four papers, on energy harvesting for highways and edge AI.</p>
       </div>
-      <div class="reveal">
-        <h4>Power, PCB & Automation</h4>
-        <div class="chips">
-          <span class="chip">Circuit & PCB Design</span><span class="chip">KiCAD</span><span class="chip">Power Electronics</span>
-          <span class="chip">Cell Testing & Validation</span><span class="chip">Fanuc / Mitsubishi Robotics</span><span class="chip">Wiring Systems</span>
-        </div>
+      <ul class="pubs">
+        <li class="pub">
+          <span class="yr">2024</span>
+          <div>
+            <h3>Advances in Energy Harnessing Techniques for Smart Highways: A Review</h3>
+            <p class="venue">Springer Nature, Electrical Engineering, 106(5), 6389–6408. Published 14 April 2024.</p>
+            <p class="note">Reviews piezoelectric, thermoelectric, pyroelectric, electromagnetic and solar highway energy harvesting, with their principles, challenges and trade-offs.</p>
+            <a class="doi" href="https://doi.org/10.1007/s00202-024-02379-8" target="_blank" rel="noopener">Read the paper (DOI 10.1007/s00202-024-02379-8)</a>
+          </div>
+          <span class="status pubd">Published</span>
+        </li>
+        <li class="pub">
+          <span class="yr">2024</span>
+          <div>
+            <h3>Real-Time Disease Classification in Coffee Plants with Coral Developer Board Mini</h3>
+            <p class="venue">IEEE International Conference on Agrosystem Engineering, Technology &amp; Applications (AGRETA). Published 9 July 2024.</p>
+            <p class="note">An automated coffee leaf disease classifier on the Coral Developer Board Mini with Google's Edge TPU. MobileNetV2 reached 98.9% training accuracy, and the Coral board ran inference in 10 ms against 40 ms on a GPU workstation.</p>
+            <a class="doi" href="https://doi.org/10.1109/AGRETA61912.2024.10948998" target="_blank" rel="noopener">Read the paper (DOI 10.1109/AGRETA61912.2024.10948998)</a>
+          </div>
+          <span class="status pubd">Published</span>
+        </li>
+        <li class="pub">
+          <span class="yr">Upcoming</span>
+          <div>
+            <h3>Detecting Coffee Leaf Diseases with the Google Coral Developer Board Mini</h3>
+            <p class="venue">Computers and Electronics in Agriculture</p>
+          </div>
+          <span class="status rev">Under revision</span>
+        </li>
+        <li class="pub">
+          <span class="yr">Upcoming</span>
+          <div>
+            <h3>Wired Highways: Energy Production for Roads</h3>
+            <p class="venue">Open Access Journal of Power and Energy (OAJPE)</p>
+          </div>
+          <span class="status rev">Submitted after first correction</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="background">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>Background</h2>
       </div>
-      <div class="reveal">
-        <h4>Data, Simulation & Delivery</h4>
-        <div class="chips">
-          <span class="chip">LTspice</span><span class="chip">Simulink</span><span class="chip">Ansys Fluent</span>
-          <span class="chip">Python / ML</span><span class="chip">Troubleshooting</span><span class="chip">Cross-functional Delivery</span>
+      <div class="bg-grid">
+        <div>
+          <h3>Education</h3>
+          <div class="edu"><b>MEng, Electrical &amp; Electronic Engineering</b><span>University of Nottingham, 2019 to 2024</span></div>
+          <div class="edu"><b>Foundation in Engineering</b><span>University of Nottingham, 2017 to 2018</span></div>
+          <h3 style="margin-top:30px">Sport</h3>
+          <p>Represented my national side in football and swimming at the University of Nottingham Nations Cup. Played football for school and university teams, and swam for school in amateur competitions.</p>
+        </div>
+        <div>
+          <h3>Certifications</h3>
+          <ul class="certs">
+            <li><span>C Language, Basic to Advanced, Learnvern</span><span>2026</span></li>
+            <li><span>Legacy JavaScript Algorithms and Data Structures, freeCodeCamp</span><span>May 2023</span></li>
+            <li><span>Data Analysis with Python, freeCodeCamp</span><span>Sep 2022</span></li>
+            <li><span>Machine Learning with Python, freeCodeCamp</span><span>Aug 2022</span></li>
+            <li><span>Responsive Web Design, freeCodeCamp</span><span>Aug 2022</span></li>
+            <li><span>Big Data 101, IBM</span><span>Oct 2021</span></li>
+            <li><span>Data Visualisation using Python, IBM</span><span>Oct 2021</span></li>
+            <li><span>Python for Pentesters, Alison</span><span>Oct 2021</span></li>
+            <li><span>Computer Networking, Wired and Wireless, Alison</span><span>Sep 2021</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Languages</h3>
+          <ul class="langs">
+            <li><span>English</span><span>Professional</span></li>
+            <li><span>Hindi</span><span>Native</span></li>
+            <li><span>Urdu</span><span>Native</span></li>
+            <li><span>Malay</span><span>Intermediate</span></li>
+          </ul>
+          <h3>Countries worked in</h3>
+          <ul class="langs">
+            <li><span>Belgium</span><span>PEC NV</span></li>
+            <li><span>Germany</span><span>BMW Wackersdorf</span></li>
+            <li><span>Malaysia</span><span>Sony EMCS</span></li>
+            <li><span>Norway</span><span>Think Outside</span></li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- CERTIFICATIONS + EDUCATION -->
-  <section id="credentials">
-    <div class="section-head">
-      <h2 class="reveal">Education & Certifications</h2>
-      <div class="idx">05 / CREDENTIALS</div>
-    </div>
-    <div class="two-col">
-      <div class="reveal">
-        <div class="edu-block">
-          <h3>MEng, Electrical & Electronics Engineering</h3>
-          <div class="meta">University of Nottingham · 2019 – 2024</div>
-        </div>
-        <div class="edu-block">
-          <h3>Foundation in Engineering</h3>
-          <div class="meta">University of Nottingham · 2017 – 2018</div>
-        </div>
-        <h4 style="font-family:var(--mono); font-size:11.5px; color:var(--teal); text-transform:uppercase; letter-spacing:.07em; margin:26px 0 12px;">Languages</h4>
-        <ul class="lang-list">
-          <li>English <span>Professional</span></li>
-          <li>Hindi <span>Native</span></li>
-          <li>Urdu <span>Native</span></li>
-          <li>Malay <span>Intermediate</span></li>
-        </ul>
-      </div>
-      <div class="reveal">
-        <ul class="cert-list">
-          <li>C Language, Basic to Advance <span>Learnvern, ongoing</span></li>
-          <li>Legacy JavaScript Algorithms & Data Structures <span>freeCodeCamp, 2023</span></li>
-          <li>Data Analysis with Python <span>freeCodeCamp, 2022</span></li>
-          <li>Machine Learning with Python <span>freeCodeCamp, 2022</span></li>
-          <li>Responsive Web Design <span>freeCodeCamp, 2022</span></li>
-          <li>Data Visualisation using Python <span>IBM, 2021</span></li>
-          <li>Big Data 101 <span>IBM, 2021</span></li>
-          <li>Computer Networking — Wired & Wireless <span>Alison, 2021</span></li>
-          <li>Python for Pentesters <span>Alison, 2021</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
 </main>
 
-<footer>
+<footer class="contact" id="contact">
   <div class="wrap">
-    <h2 class="reveal">Open to embedded/firmware roles, industrial automation, renewable energy engineering — and remote freelance or contract work.</h2>
-    <div class="status-line"><span class="pulse"></span> AVAILABLE NOW</div>
-    <div class="contact-row reveal">
-      <a class="btn primary" href="mailto:hamzahw.work@gmail.com">hamzahw.work@gmail.com</a>
-      <a class="btn" href="tel:+918953417389">+91 8953417389</a>
-      <a class="btn" href="https://www.linkedin.com/in/hamzahwarsi/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://www.kaggle.com/mohamzah/code" target="_blank" rel="noopener">Kaggle</a>
+    <h2>Get in touch</h2>
+    <p class="lede">Open to roles in electronics, embedded firmware, test and validation, power electronics and edge AI.</p>
+    <div class="contact-grid">
+      <a href="mailto:hamzahw.work@gmail.com"><small>Email</small><strong>hamzahw.work@gmail.com</strong></a>
+      <a href="tel:+971509448297"><small>Phone</small><strong>+971 50 944 8297</strong></a>
+      <a href="https://www.linkedin.com/in/hamzahwarsi/" target="_blank" rel="noopener"><small>LinkedIn</small><strong>linkedin.com/in/hamzahwarsi</strong></a>
     </div>
-    <div class="foot-bottom wrap" style="padding-left:0;padding-right:0;">
-      <span>MOHAMMAD HAMZAH WARSI — EE PORTFOLIO</span>
-      <span>UAE-based · Open to remote</span>
-    </div>
+    <p class="foot">© <span id="yr"></span> Mohammad Hamzah Warsi</p>
   </div>
 </footer>
 
 <script>
-  const items = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  items.forEach(el=>io.observe(el));
-</script>
+(function(){
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- theme toggle ---------- */
+  const root = document.documentElement;
+  try{ const t = localStorage.getItem('theme'); if(t) root.dataset.theme = t; }catch(e){}
+  document.getElementById('themeBtn').addEventListener('click', () => {
+    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    try{ localStorage.setItem('theme', root.dataset.theme); }catch(e){}
+  });
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ---------- chip pinout ---------- */
+  const pins = [
+    {n:1, code:'HW', short:'Hardware', title:'Hardware design',
+     desc:'Analogue, digital and power electronics, from component selection to 4-layer boards.',
+     items:['Analogue, digital & power electronics','Component selection','Schematic capture','PCB design & modification','Altium','KiCad','4-layer PCBs','Switch-mode power supplies','DC-DC converters','Op-amp signal conditioning','Power conditioning','Battery charging circuits','LTspice']},
+    {n:2, code:'FW', short:'Firmware', title:'Embedded firmware',
+     desc:'C firmware across embedded Linux, RTOS and bare-metal on TI AM64x Arm processors.',
+     items:['C','C++','TI AM64x (Cortex-A53, R5F, M4F)','STM32 (Arm Cortex-M)','Arduino','RTOS','Embedded Linux','Bare-metal','State machines','Cross-compilation','Keil uVision','I2C','SPI','CAN','UART','RS232','ADC','GPIO','Git','Code reviews']},
+    {n:3, code:'TST', short:'Test', title:'Test & validation',
+     desc:'Hardware-in-the-loop testing, calibration and root-cause analysis on real equipment.',
+     items:['Hardware-in-the-loop (HIL) testing','Unit testing','Functional validation','Calibration','Test plans & documentation','Oscilloscope','Multimeter','Signal generator','Bench power supply','Thermal camera','SWD debugger','Soldering','Functional safety checks','Root-cause analysis']},
+    {n:4, code:'SNS', short:'Sensing', title:'Sensing & instrumentation',
+     desc:'Pressure, temperature and radar measurement, from ADC scaling to the operator HMI.',
+     items:['Pressure transmitters & transducers','Thermal control & temperature sensing','Doppler radar signal processing','Vacuum systems','ADC scaling','Real-time data logging','HMI','Alarm & fault-detection logic']},
+    {n:5, code:'AUT', short:'Automation', title:'Automation & industrial',
+     desc:'Robot cells, control panels and power systems on live production lines.',
+     items:['Fanuc robots','Mitsubishi robots','Electrical cabinets & control panels','Power systems','Sensors & actuators','Valves, pumps, fans','Stepper motors','PID control']},
+    {n:6, code:'ML', short:'ML & vision', title:'Machine learning & computer vision',
+     desc:'Model training, quantisation and deployment to edge hardware, plus time-series forecasting.',
+     items:['Python','PyTorch','TensorFlow','Keras','TensorFlow Lite','8-bit quantisation','scikit-learn','pandas','NumPy','OpenCV','YOLOv3','Coral Edge TPU','GPU, TPU, VPU deployment','Time-series forecasting','Data pipelines']},
+    {n:7, code:'SIM', short:'Tools', title:'Tools & simulation',
+     desc:'Simulation and design tools used across university and industry projects.',
+     items:['MATLAB','Simulink','Ansys (mechanical & thermal)','AutoCAD','3D printing','Excel dashboards','MS Office','AI-assisted development tools']},
+    {n:8, code:'PUB', short:'Research', title:'Research',
+     desc:'First author of four papers on highway energy harvesting and edge AI. See the Research section below.',
+     items:['Springer Nature, Electrical Engineering (2024)','IEEE AGRETA (2024)','Computers and Electronics in Agriculture (under revision)','OAJPE (submitted)']}
+  ];
+  const ys = {1:110,2:180,3:250,4:320,5:320,6:250,7:180,8:110};
+  const NS = 'http://www.w3.org/2000/svg';
+  const svg = document.getElementById('chip');
+  const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for(const k in attrs) e.setAttribute(k, attrs[k]); if(parent) parent.appendChild(e); return e; };
+
+  // chip body with pin-1 notch
+  el('path',{d:'M196,60 H248 A12,12 0 0 0 272,60 H324 Q330,60 330,66 V354 Q330,360 324,360 H196 Q190,360 190,354 V66 Q190,60 196,60 Z', fill:'var(--chip)'}, svg);
+  el('circle',{cx:206,cy:78,r:4,fill:'var(--chip-ink)',opacity:.6}, svg);
+  const t1 = el('text',{x:260,y:204,'text-anchor':'middle',fill:'#fff','font-family':'Archivo, sans-serif','font-size':20,'font-weight':700,style:'font-stretch:80%'}, svg); t1.textContent='MHW-EE24';
+  const t2 = el('text',{x:260,y:226,'text-anchor':'middle',fill:'var(--chip-ink)','font-family':'Archivo, sans-serif','font-size':12,style:'font-stretch:85%',opacity:.8}, svg); t2.textContent='Hamzah Warsi';
+  const t3 = el('text',{x:260,y:242,'text-anchor':'middle',fill:'var(--chip-ink)','font-family':'Archivo, sans-serif','font-size':12,style:'font-stretch:85%',opacity:.8}, svg); t3.textContent='MEng EEE';
+
+  const groups = [];
+  pins.forEach((p, i) => {
+    const y = ys[p.n], left = p.n <= 4;
+    const g = el('g',{class:'pin',tabindex:0,role:'button','aria-label':`Pin ${p.n}: ${p.title}`,'aria-pressed':'false',style:`--d:${i}`}, svg);
+    el('rect',{class:'hit',x: left?6:322, y:y-30, width:192, height:46, rx:6}, g);
+    el('line',{class:'trace',x1: left?24:496, y1:y, x2: left?160:360, y2:y, style:`--d:${i}`}, g);
+    el('rect',{class:'leg',x: left?160:330, y:y-7, width:30, height:14, rx:2}, g);
+    el('circle',{class:'via',cx: left?24:496, cy:y, r:7, style:`--d:${i}`}, g);
+    const lb = el('text',{class:'lbl',x: left?154:366, y:y-12,'text-anchor': left?'end':'start'}, g); lb.textContent = p.short;
+    const pn = el('text',{class:'pn',x: left?198:322, y:y+4,'text-anchor': left?'start':'end'}, g);
+    pn.textContent = left ? `${p.n} ${p.code}` : `${p.code} ${p.n}`;
+    groups.push({g, p, y, left});
+  });
+  const sig = el('circle',{class:'sig',r:4,cx:0,cy:0,opacity:0}, svg);
+  let sigAnim = null;
+
+  const panel = document.getElementById('pinPanel');
+  function activate(i){
+    groups.forEach((o, j) => { o.g.classList.toggle('on', i===j); o.g.setAttribute('aria-pressed', i===j ? 'true':'false'); });
+    const {p, y, left} = groups[i];
+    panel.innerHTML = `<div class="meta">Pin ${p.n}, ${p.code}</div><h3>${p.title}</h3><p>${p.desc}</p><ul class="tags">${p.items.map(s=>`<li>${s}</li>`).join('')}</ul>`;
+    if(sigAnim) sigAnim.cancel();
+    if(!reduce && sig.animate){
+      const a = left?24:496, b = left?160:360;
+      sig.setAttribute('opacity',1);
+      sigAnim = sig.animate([{transform:`translate(${a}px,${y}px)`},{transform:`translate(${b}px,${y}px)`}],{duration:900,iterations:Infinity,easing:'ease-in-out'});
+    }
+  }
+  groups.forEach((o, i) => {
+    o.g.addEventListener('click', () => activate(i));
+    o.g.addEventListener('mouseenter', () => activate(i));
+    o.g.addEventListener('focus', () => activate(i));
+    o.g.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); activate(i); }
+      if(e.key === 'ArrowDown' || e.key === 'ArrowRight'){ e.preventDefault(); groups[(i+1)%groups.length].g.focus(); }
+      if(e.key === 'ArrowUp' || e.key === 'ArrowLeft'){ e.preventDefault(); groups[(i-1+groups.length)%groups.length].g.focus(); }
+    });
+  });
+  activate(1);
+
+  /* ---------- PEC NV workstreams ---------- */
+  const work = [
+    {id:'bmw', star:true, tab:'BMW Wackersdorf', title:'BMW Wackersdorf, Germany', sub:'One-week rapid on-site intervention',
+     items:['Resolved critical tower issues on-site by troubleshooting and providing solutions across the assigned towers.','Eliminated a recurring overheating risk by diagnosing and fixing control-panel wiring faults.','Improved measurement reliability by correcting sensor placement and design flaws.','Identified the root cause of a condensation issue and wrote testing documentation for future service engineers.','Completed final testing of tower RD01 and delivered it to BMW, contributing to a €100M customer handover, one of the company\'s biggest.']},
+    {id:'fw', tab:'Firmware & software', title:'Firmware & software development', sub:'TI AM64x Arm processors, embedded Linux, RTOS and bare-metal',
+     items:['Reduced test-cycle variability on automated battery test systems for BMW and Fraunhofer by developing C firmware across embedded Linux, RTOS and bare-metal on TI AM64x Arm processors, using cross-compilation, Git version control and code reviews.','Added new docking-controller functions to the tester firmware and wrote the control logic as state machines.','Validated software on real equipment in hardware-in-the-loop (HIL) tester setups, and unit tested the new cell pallet.','Debugged communication and signal faults across I2C, SPI, CAN, UART and RS232 using an SWD debugger and oscilloscope, working with hardware and firmware engineers.','Sped up scripting, development and debugging by using AI-assisted coding tools.']},
+    {id:'ai8', tab:'AI8 analogue input cards', title:'AI8 analogue input cards', sub:'Firmware calibration in Keil uVision',
+     items:['Improved analogue input accuracy, proven by documented before/after performance metrics, by developing a firmware calibration update for AI8 (Analog Input 8) modules in Keil uVision and refining the calibration lookup tables and gain offsets.','Validated every change with functional testing before release.']},
+    {id:'safety', tab:'Safety system', title:'Safety system', sub:'Alarms, fail-safe checks and operator protection',
+     items:['Made faults faster to diagnose by reformatting the alarm system for service engineers, and introduced new alarms for bimetal flicker and air-pump failure.','Made the system fail safe with a digital-output health check that cross-validates outputs against inputs, so the system becomes inoperable until the fault is resolved.','Protected operators by implementing evaporator-fan post-run logic that keeps the fan running for a set time after an overheat or at high temperatures, and functional safety checks for tester door seals.','Improved system readiness by detecting the availability of the air pump, and prevented overheating by monitoring refrigerant leaks over a series of months.']},
+    {id:'thc', tab:'Thermal control cards', title:'Thermal control cards (THC)', sub:'40 cards brought back to specification',
+     items:['Brought 40 thermal control cards back to specification by calibrating, testing and validating each card for temperature readings.','Fixed firmware flaws, including a sensor type misconfigured in the registers and incorrect offset calculations.','Reduced calibration time and manual steps by modifying and automating the calibration scripts, and reported accuracy across all calibrations in an Excel dashboard.']},
+    {id:'vac', tab:'Vacuum & pressure', title:'Vacuum system & pressure measurement', sub:'-1 to 12 bar at ±1% accuracy',
+     items:['Implemented a vacuum system into the testing stations.','Enabled real-time pressure monitoring from -1 to 12 bar by implementing pressure transmitter functionality, with ADC channel configuration and scaling algorithms that achieved ±1% measurement accuracy.','Validated performance against the transmitter datasheet specifications, and integrated live pressure data into the HMI for operator visibility, data logging and overpressure safety alerts.']},
+    {id:'comp', tab:'Compressor fault', title:'Thermal management & compressor fault', sub:'Cross-department project',
+     items:['Added new functions to the cooling system by implementing 3-way-valve code for flow direction and regulation and fan control for thermal management, verified through functional testing.','Found the cause of a compressor overheating fault that the firmware could not explain by placing temperature sensors on the valve pipes and comparing readings across test stages against a working unit. This revealed a stepper-motor valve fitted in reverse, which was repaired externally.']},
+    {id:'pallet', tab:'Type C pallet & prototyping', title:'Type C pallet & prototyping', sub:'Now deployed at BMW for battery cell testing',
+     items:['Reduced contact-resistance variability by identifying and resolving key design flaws in the next-generation Type C pallet, now deployed at BMW for battery cell testing.','Implemented different probes and cell treatments for maximum efficiency in testing cells.','Took a new design from prototype toward production by prototyping and unit testing a 20-cell pallet for BMW "Neue Klasse" cells.','Improved existing hardware by modifying PCB designs, and contributed to informal design risk reviews that flagged failure modes such as overheating and overpressure.','Developed comprehensive test documentation and best-practice procedures for minimum contact resistance.']},
+    {id:'cust', tab:'Fraunhofer & Varta', title:'Customer projects: Fraunhofer and Varta', sub:'Comparative probe study and a safety root cause',
+     items:['Gave Fraunhofer a clear, data-backed recommendation by designing and running a comparative study of 2 new contact probes across 3 surface treatments (untreated, laser-treated, sandpaper) and multiple power inputs, measuring contact resistance and maximum temperature at the contact points.','Identified Probe X as superior across most test conditions, documented all results, delivered a final report with a recommendation, and estimated the manufacturing costs of the options.','Resolved a critical safety issue for Varta, where the customer\'s contact probes exceeded temperature limits, by running controlled tests with the customer\'s test regime across multiple wire types and identifying incorrect wire selection as the root cause.','Restored normal operation by recommending replacement of the wires, and documented findings and corrective actions for the customer\'s quality team.']}
+  ];
+  const tabsEl = document.getElementById('pecTabs'), panelsEl = document.getElementById('pecPanels');
+  const tabs = work.map((w, i) => {
+    const b = document.createElement('button');
+    b.setAttribute('role','tab'); b.id = 'tab-'+w.id; b.setAttribute('aria-controls','panel-'+w.id);
+    b.textContent = w.tab; if(w.star) b.classList.add('star');
+    tabsEl.appendChild(b);
+    const pnl = document.createElement('div');
+    pnl.setAttribute('role','tabpanel'); pnl.id = 'panel-'+w.id; pnl.setAttribute('aria-labelledby', b.id); pnl.tabIndex = 0;
+    pnl.innerHTML = `<h4>${w.title}</h4><p class="sub">${w.sub}</p><ul>${w.items.map(s=>`<li>${s}</li>`).join('')}</ul>`;
+    panelsEl.appendChild(pnl);
+    b.addEventListener('click', () => select(i));
+    b.addEventListener('keydown', e => {
+      const k = e.key; let n = null;
+      if(k==='ArrowDown'||k==='ArrowRight') n = (i+1)%work.length;
+      if(k==='ArrowUp'||k==='ArrowLeft') n = (i-1+work.length)%work.length;
+      if(k==='Home') n = 0; if(k==='End') n = work.length-1;
+      if(n!==null){ e.preventDefault(); select(n); tabs[n].b.focus(); }
+    });
+    return {b, pnl};
+  });
+  function select(i){
+    tabs.forEach((t, j) => {
+      const on = i===j;
+      t.b.setAttribute('aria-selected', on); t.b.tabIndex = on ? 0 : -1; t.pnl.hidden = !on;
+    });
+    tabs[i].b.scrollIntoView({block:'nearest', inline:'nearest'});
+  }
+  tabs.forEach((t,j)=>{ t.b.setAttribute('aria-selected', j===0); t.b.tabIndex = j===0?0:-1; t.pnl.hidden = j!==0; });
+
+  /* ---------- projects ---------- */
+  const projects = [
+    {name:'Energy harvesting system for highways', cats:['hardware','energy'], one:'Piezoelectric, thermoelectric and wind sources powering street lighting and utilities.',
+     fig:'350 W', figLabel:'projected at highway speeds',
+     body:'Designed a multi-source system that captures waste heat, vibration and airflow to power street lighting and utilities. Engineered the power conditioning and 12V battery charging circuit, including a boost converter that holds a 10–20V input at 24V, and modelled the system in ANSYS (mechanical and thermal), LTspice and Simulink.',
+     spec:[['Projected output','350 W'],['Boost converter input','10–20 V'],['Regulated output','24 V'],['Output ripple','< 2 mV'],['Battery charging','12 V']],
+     tools:['ANSYS','LTspice','Simulink','Power conditioning']},
+    {name:'Edge-based coffee leaf disease classification', cats:['ml','embedded'], one:'Five deep learning models trained and benchmarked on GPU, TPU and VPU.',
+     fig:'10 ms', figLabel:'inference on Coral Edge TPU',
+     body:'Trained five deep learning models (PentaCNN, MobileNetV2, VGG-16, VGG-19, DenseNet121) in Python on the JmuBen dataset using GPU and TPU, deployed the best model to GPU, TPU and VPU, and built a benchmarking solution comparing all three platforms. With TensorFlow Lite and 8-bit quantisation, the Coral Edge TPU ran inference four times faster than a GPU workstation. Published as a first-author IEEE paper.',
+     spec:[['Edge TPU inference','10 ms'],['GPU workstation inference','40 ms'],['MobileNetV2 training accuracy','98.9%'],['Models trained','5'],['Quantisation','8-bit']],
+     tools:['TensorFlow Lite','Coral Edge TPU','Python','MobileNetV2']},
+    {name:'Custom switch-mode power supply', cats:['hardware','energy'], one:'12V/2A supply on a 4-layer PCB designed and routed in KiCad.',
+     fig:'~85%', figLabel:'efficiency',
+     body:'Engineered a 12V/2A supply around a TL494 controller incorporating a transformer, supercapacitor bank, inverters and relay control coils, with analytical calculations of component ratings, efficiency and thermal performance. Designed and routed a 4-layer PCB in KiCad.',
+     spec:[['Output','12 V / 2 A'],['Controller','TL494'],['Switching frequency','100 kHz'],['Efficiency','~85%'],['Ripple','150 mV'],['PCB','4-layer']],
+     tools:['KiCad','TL494','Thermal analysis']},
+    {name:'Doppler radar speed gun', cats:['embedded','hardware'], one:'HB100 radar module and STM32 with op-amp signal conditioning.',
+     fig:'±5%', figLabel:'of a commercial radar gun',
+     body:'Built a speed gun from a Doppler radar module (HB100) and an STM32 microcontroller, with op-amp signal conditioning and a signal processing algorithm that converts the Doppler frequency shift to velocity using zero-crossing detection. Speed is displayed in real time on an LED interface.',
+     spec:[['Radar module','HB100'],['Microcontroller','STM32'],['Method','Zero-crossing detection'],['Accuracy','±5%'],['Display','Real-time LED']],
+     tools:['STM32','Op-amps','Signal processing']},
+    {name:'Face and shape detection', cats:['ml'], one:'Custom YOLOv3 model trained on a self-built, augmented face dataset.',
+     fig:'Real-time', figLabel:'detection in OpenCV',
+     body:'Trained a custom detection model from YOLOv3 weights on a large self-built dataset of face images, augmented for lighting, angle and expression to improve robustness. Implemented shape detection for circles, squares and triangles, with real-time detection in OpenCV and Python.',
+     spec:[['Base model','YOLOv3'],['Augmentation','Lighting, angle, expression'],['Shapes detected','Circle, square, triangle'],['Runtime','Real-time']],
+     tools:['OpenCV','YOLOv3','Python']},
+    {name:'Line-following 4WD Hercules robot', cats:['embedded','hardware'], one:'Etched PCBs, Arduino firmware and PID motor control.',
+     fig:'8', figLabel:'IR sensor array',
+     body:'Designed and etched copper PCBs for an 8-sensor infrared array, wrote Arduino firmware for sensor processing and PID motor control, and modelled and 3D-printed a custom IR sensor holder in AutoCAD, achieving stable line tracking on the test course.',
+     spec:[['Sensors','8 × infrared'],['Control','PID'],['PCB','Hand-etched copper'],['Mechanical','3D-printed holder']],
+     tools:['Arduino','AutoCAD','3D printing']}
+  ];
+  const cats = [['all','All'],['hardware','Hardware'],['embedded','Embedded'],['ml','Machine learning'],['energy','Power & energy']];
+  const filtersEl = document.getElementById('filters'), listEl = document.getElementById('projList');
+  projects.forEach((p, i) => {
+    const d = document.createElement('details');
+    d.className = 'proj'; d.dataset.cats = p.cats.join(' ');
+    d.innerHTML = `<summary>
+        <div><h3>${p.name}</h3><div class="one">${p.one}</div></div>
+        <div class="fig"><strong>${p.fig}</strong><small>${p.figLabel}</small></div>
+        <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+      </summary>
+      <div class="proj-body">
+        <div><p>${p.body}</p><ul class="tags ptags">${p.tools.map(t=>`<li>${t}</li>`).join('')}</ul></div>
+        <table class="spec"><caption>Characteristics</caption><tbody>${p.spec.map(r=>`<tr><th scope="row">${r[0]}</th><td>${r[1]}</td></tr>`).join('')}</tbody></table>
+      </div>`;
+    if(i===0) d.open = true;
+    listEl.appendChild(d);
+  });
+  const fBtns = cats.map(([k, label]) => {
+    const b = document.createElement('button'); b.type='button'; b.textContent = label; b.setAttribute('aria-pressed', k==='all');
+    b.addEventListener('click', () => {
+      fBtns.forEach(x => x.setAttribute('aria-pressed', x===b));
+      listEl.querySelectorAll('.proj').forEach(d => { d.hidden = !(k==='all' || d.dataset.cats.split(' ').includes(k)); });
+    });
+    filtersEl.appendChild(b); return b;
+  });
+
+  /* ---------- nav highlight ---------- */
+  const links = [...document.querySelectorAll('.nav a.link')];
+  const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => { if(en.isIntersecting){ links.forEach(l=>l.classList.remove('active')); const a = map.get(en.target.id); if(a){ a.classList.add('active'); a.scrollIntoView({block:'nearest',inline:'nearest'}); } } });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    map.forEach((a, id) => { const s = document.getElementById(id); if(s) io.observe(s); });
+  }
+})();
+</script>
 </body>
 </html>
